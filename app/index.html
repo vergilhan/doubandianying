@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>电影展示 - </title>
+  <link rel="stylesheet" href="assets/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/wap.css">
+</head>
+
+<body ng-app="moviecat">
+  <!-- 顶部导航栏开始 -->
+  <div class="top">
+    <div class="header">
+      <a href="#/home_page"><img src="assets/img/logo.png" alt=""></a>
+      <div class="search" ng-controller="SearchController">
+        <input class="my-input" type="text" placeholder="电影搜索" ng-model="searchText">
+        <button ng-click="search()">搜索</button>
+      </div>
+    </div>
+    <!-- 通过自定义指令, 生成菜单栏 -->
+    <nav class="nav" menu-active></nav>
+  </div>
+  <!-- 顶部导航栏结束 -->
+  <div class="container">
+    <div ng-view></div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <p>版权所有&copy; 前端与移动开发学院 前端(允许侵权)</p>
+    </div>
+  </footer>
+  <script src="assets/js/prefixfree.min.js"></script>
+
+  <script src="../node_modules/angular/angular.js"></script>
+  <script src="../node_modules/angular-route/angular-route.js"></script>
+  <script src="app.js"></script>
+  <script src="home_page/controller.js"></script>
+  <script src="movie_list/module.js"></script>
+  <script src="services/service-jsonp.js"></script>
+  <script src="directives/menu-active.js"></script>
+  <script src="details/module.js"></script>
+  <!-- <script src="in_theaters/controller.js"></script>
+  <script src="coming_soon/controller.js"></script>
+  <script src="top250/controller.js"></script> -->
+</body>
+
+</html>
